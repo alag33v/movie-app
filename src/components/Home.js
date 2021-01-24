@@ -7,11 +7,11 @@ import MovieThumb from './elements/MovieThumb';
 import SearchBar from './elements/SearchBar';
 import Spinner from './elements/Spinner';
 import {
-  API_URL,
-  API_KEY,
   IMAGE_BASE_URL,
   BACKDROP_SIZE,
-  POSTER_SIZE
+  POSTER_SIZE,
+  SEARCH_BASE_URL,
+  POPULAR_BASE_URL
 } from '../config';
 import NoImage from './images/no_image.jpg';
 
@@ -19,13 +19,18 @@ const Home = () => {
   const [{ state, loading, error }, fetchMovies] = useHomeFetch();
   const [searchTerm, setSearchTerm] = useState('');
 
+  const searchMovie = search => {
+    const endpoint = search ? SEARCH_BASE_URL + search : POPULAR_BASE_URL;
+
+    setSearchTerm(search);
+    fetchMovies(endpoint);
+  };
+
   const loadMoreMovies = () => {
-    const searchEndpoint = `${API_URL}search/movie?api_key=${API_KEY}&query=${searchTerm}&page=${
+    const searchEndpoint = `${SEARCH_BASE_URL}${searchTerm}&page=${
       state.currentPage + 1
     }`;
-    const popularEndpoint = `${API_URL}movie/popular?api_key=${API_KEY}&page=${
-      state.currentPage + 1
-    }`;
+    const popularEndpoint = `${POPULAR_BASE_URL}&page=${state.currentPage + 1}`;
     const endpoint = searchTerm ? searchEndpoint : popularEndpoint;
 
     fetchMovies(endpoint);
@@ -34,20 +39,14 @@ const Home = () => {
   if (error) return <div>Something went wrong...</div>;
   if (!state.movies[0]) return <Spinner />;
 
-  const getRandomInt = max => {
-    return Math.floor(Math.random() * Math.floor(max));
-  };
-
-  const randomFilm = getRandomInt(20);
-
   return (
     <>
       <HeroImage
-        image={`${IMAGE_BASE_URL}${BACKDROP_SIZE}${state.movies[randomFilm].backdrop_path}`}
-        title={state.movies[randomFilm].original_title}
-        text={state.movies[randomFilm].overview}
+        image={`${IMAGE_BASE_URL}${BACKDROP_SIZE}${state.movies[0].backdrop_path}`}
+        title={state.movies[0].original_title}
+        text={state.movies[0].overview}
       />
-      <SearchBar />
+      <SearchBar callback={searchMovie} />
       <Grid header={searchTerm ? 'Search Result' : 'Popular Movies'}>
         {state.movies.map(movie => (
           <MovieThumb
