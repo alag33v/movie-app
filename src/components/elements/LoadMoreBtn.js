@@ -1,8 +1,10 @@
-const LoadMoreBtn = () => {
+import { StyledLoadMoreBtn } from '../styles/StyledLoadMoreBtn';
+
+const LoadMoreBtn = ({ text, callback }) => {
   return (
-    <div>
-      <h1>LoadMoreBtn</h1>
-    </div>
+    <StyledLoadMoreBtn type='button' onClick={callback}>
+      {text}
+    </StyledLoadMoreBtn>
   );
 };
 

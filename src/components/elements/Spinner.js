@@ -1,9 +1,5 @@
-const Spinner = () => {
-  return (
-    <div>
-      <h1>Spinner</h1>
-    </div>
-  );
-};
+import { StyledSpinner } from '../styles/StyledSpinner';
+
+const Spinner = () => <StyledSpinner />;
 
 export default Spinner;

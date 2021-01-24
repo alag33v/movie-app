@@ -10,11 +10,15 @@ export const StyledHeroImage = styled.div`
     ),
     url('${props.image}'), #1c1c1c`};
   background-size: 100%, cover !important;
-  background-position: center, center !important;
+  background-position: center, top !important;
   width: 100%;
-  height: 600px;
+  height: 85vh;
   position: relative;
   animation: animateHeroimage 1s;
+
+  @media screen and (max-width: 500px) {
+    height: 91vh;
+  }
 
   .heroimage-content {
     max-width: 1280px;

@@ -1,8 +1,14 @@
-const MovieThumb = () => {
+import { StyledMovieThumb } from '../styles/StyledMovieThumb';
+
+const MovieThumb = ({ image, movieId, clickable }) => {
   return (
-    <div>
-      <h1>MovieThumb</h1>
-    </div>
+    <StyledMovieThumb>
+      {clickable ? (
+        <img className='clickable' src={image} alt='movie thumb' />
+      ) : (
+        <img src={image} alt='movie thumb' />
+      )}
+    </StyledMovieThumb>
   );
 };
 

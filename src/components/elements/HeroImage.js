@@ -1,8 +1,15 @@
-const HeroImage = () => {
+import { StyledHeroImage } from '../styles/StyledHeroImage';
+
+const HeroImage = ({ image, title, text }) => {
   return (
-    <div>
-      <h1>HeroImage</h1>
-    </div>
+    <StyledHeroImage image={image}>
+      <div className='heroimage-content'>
+        <div className='heroimage-text'>
+          <h1>{title}</h1>
+          <p>{text}</p>
+        </div>
+      </div>
+    </StyledHeroImage>
   );
 };
 
