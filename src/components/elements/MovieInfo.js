@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import MovieThumb from './MovieThumb';
 import { IMAGE_BASE_URL, POSTER_SIZE } from '../../config';
 import NoImage from '../images/no_image.jpg';
@@ -37,6 +38,10 @@ const MovieInfo = ({ movie }) => {
       </div>
     </StyledMovieInfo>
   );
+};
+
+MovieInfo.propTypes = {
+  movie: PropTypes.object
 };
 
 export default MovieInfo;

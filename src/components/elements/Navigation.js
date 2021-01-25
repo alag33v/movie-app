@@ -1,4 +1,5 @@
 import { Link } from '@reach/router';
+import PropTypes from 'prop-types';
 import { StyledNavigation } from '../styles/StyledNavigation';
 
 const Navigation = ({ movieTitle }) => {
@@ -13,6 +14,10 @@ const Navigation = ({ movieTitle }) => {
       </div>
     </StyledNavigation>
   );
+};
+
+Navigation.propTypes = {
+  movieTitle: PropTypes.string
 };
 
 export default Navigation;
