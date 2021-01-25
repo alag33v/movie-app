@@ -1,20 +1,16 @@
 import { Link } from '@reach/router';
-import RMDBLogo from '../images/reactMovie_logo.png';
-import TMDBLogo from '../images/tmdb_logo.svg';
-import {
-  StyledHeader,
-  StyledRMDBLogo,
-  StyledTMDBLogo
-} from '../styles/StyledHeader';
+import logo from '../images/logo.svg';
+import oscar from '../images/oscar.svg';
+import { StyledHeader, StyledLogo, StyledOscar } from '../styles/StyledHeader';
 
 const Header = () => {
   return (
     <StyledHeader>
       <div className='header-content'>
         <Link to='/'>
-          <StyledRMDBLogo src={RMDBLogo} alt='rmdb-logo' />
+          <StyledLogo src={logo} alt='logo' />
         </Link>
-        <StyledTMDBLogo src={TMDBLogo} alt='tmdb-logo' />
+        <StyledOscar src={oscar} alt='oscar' />
       </div>
     </StyledHeader>
   );

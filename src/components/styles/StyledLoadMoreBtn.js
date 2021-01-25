@@ -6,6 +6,7 @@ export const StyledLoadMoreBtn = styled.button`
   min-width: 200px;
   height: 70px;
   color: #fff;
+  cursor: pointer;
   transition: all 0.3s;
   border-radius: 40px;
   font-family: 'Abel', sans-serif;
@@ -14,7 +15,6 @@ export const StyledLoadMoreBtn = styled.button`
   display: block;
   margin: 20px auto;
   padding: 0 20px;
-  cursor: pointer;
   outline: none;
 
   :hover {

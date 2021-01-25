@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { IMAGE_BASE_URL, POSTER_SIZE } from '../../config';
-import NoImage from '../images/no_image.jpg';
+import NoImage from '../images/unknown.png';
 import { StyledActor } from '../styles/StyledActor';
 
 const Actor = ({ actor }) => {

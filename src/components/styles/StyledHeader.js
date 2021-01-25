@@ -4,11 +4,13 @@ export const StyledHeader = styled.div`
   background: #1c1c1c;
   padding: 0 20px;
   box-sizing: border-box;
+  height: 8vh;
 
   .header-content {
+    display: flex;
+    justify-content: space-between;
     max-width: 1280px;
-    min-height: 15vh;
-    padding: 20px 0px;
+    min-height: 120px;
     margin: 0 auto;
     box-sizing: border-box;
 
@@ -19,24 +21,12 @@ export const StyledHeader = styled.div`
   }
 `;
 
-export const StyledRMDBLogo = styled.img`
-  width: 250px;
-  margin-top: 20px;
-
-  @media screen and (max-width: 500px) {
-    width: 150px;
-    margin-top: 5px;
-  }
+export const StyledLogo = styled.img`
+  margin-top: 1vh;
+  height: 6vh;
 `;
 
-export const StyledTMDBLogo = styled.img`
-  width: 122px;
-  margin-top: 25px;
-  float: right;
-
-  @media screen and (max-width: 500px) {
-    display: inline-block;
-    width: 80px;
-    margin-top: 0px;
-  }
+export const StyledOscar = styled.img`
+  margin-top: 1.8vh;
+  height: 5vh;
 `;
