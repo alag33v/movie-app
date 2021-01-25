@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <StyledHeader>
       <div className='header-content'>
-        <Link to='/'>
+        <Link to='/movie-app'>
           <StyledLogo src={logo} alt='logo' />
         </Link>
         <StyledOscar src={oscar} alt='oscar' />

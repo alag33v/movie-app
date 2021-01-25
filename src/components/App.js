@@ -11,7 +11,7 @@ const App = () => {
       <GlobalStyle />
       <Header />
       <Router>
-        <Home path='/' />
+        <Home path='/movie-app' />
         <Movie path='/:movieId' />
         <NotFound default />
       </Router>

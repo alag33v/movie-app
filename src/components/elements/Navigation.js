@@ -6,7 +6,7 @@ const Navigation = ({ movieTitle }) => {
   return (
     <StyledNavigation>
       <div className='navigation-content'>
-        <Link to='/'>
+        <Link to='/movie-app'>
           <p>Home</p>
         </Link>
         <p>|</p>
